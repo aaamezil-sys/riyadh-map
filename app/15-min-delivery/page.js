@@ -14,29 +14,51 @@ const RiyadhIsochrone = dynamic(() => import('../../components/RiyadhIsochrone')
 
 export default function MapPage() {
   return (
-    // 1. Flex container forces the layout to use exactly 100% of the screen height
     <main className="flex flex-col h-screen w-screen bg-black overflow-hidden">
       
-      {/* 2. Top Bar (Button Outside Map) */}
-      <div className="flex-none z-10 p-4 border-b border-white/10 bg-black flex justify-between items-center">
-        <span className="text-emerald-500 font-bold tracking-widest text-xs uppercase">
-          Riyadh Logistics Engine
-        </span>
+      {/* 1. CSS FORCE: This guarantees the map fills the bottom area 100% */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .mapboxgl-map, .mapboxgl-canvas-container, .mapboxgl-canvas {
+          height: 100% !important;
+          width: 100% !important;
+          position: absolute !important;
+          inset: 0 !important;
+        }
+      `}} />
+
+      {/* 2. HEADER: Professional Title & Branding */}
+      <div className="flex-none z-10 px-6 py-4 border-b border-white/10 bg-black flex justify-between items-center h-20">
         
+        {/* Left: The Titles */}
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3 mb-1">
+            <span className="text-emerald-500 font-bold tracking-widest text-xs uppercase">
+              RIYADH
+            </span>
+            <span className="h-px w-8 bg-white/20"></span>
+            <span className="text-gray-500 text-[10px] uppercase tracking-widest font-medium">
+              BY AHMED MEZIL
+            </span>
+          </div>
+          <h1 className="text-white text-xl md:text-2xl font-bold tracking-tight">
+            15-Minute Delivery Zones
+          </h1>
+        </div>
+        
+        {/* Right: Back Button */}
         <Link 
           href="/" 
-          className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-sm text-gray-300 transition-all group"
+          className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-emerald-500/10 border border-white/10 hover:border-emerald-500/50 rounded-lg text-sm text-gray-300 hover:text-emerald-400 transition-all group"
         >
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
-          Back to Platform
+          <span className="hidden md:inline">Back to Platform</span>
+          <span className="md:hidden">Back</span>
         </Link>
       </div>
 
-      {/* 3. Map Container (Fills ALL remaining space) */}
+      {/* 3. MAP AREA: Fills all remaining space */}
       <div className="flex-1 relative w-full bg-gray-900">
-        <div className="absolute inset-0">
-          <RiyadhIsochrone />
-        </div>
+        <RiyadhIsochrone />
       </div>
       
     </main>
