@@ -8,7 +8,7 @@ export default function RiyadhIntelligencePage() {
         {/* Header Section */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-500 bg-clip-text text-transparent">
-            Riyadh Spatial Intelligence
+          15-Minute Logistics Engine
           </h1>
           <p className="text-gray-400 mt-2 text-lg">
             Interactive logistics analysis for Vision 2030 expansion.
