@@ -14,50 +14,54 @@ const RiyadhIsochrone = dynamic(() => import('../../components/RiyadhIsochrone')
 
 export default function MapPage() {
   return (
-    <main className="flex flex-col h-screen w-screen bg-black overflow-hidden">
+    <main className="h-screen w-screen bg-black overflow-hidden flex flex-col">
       
-      {/* 1. CSS FORCE: This guarantees the map fills the bottom area 100% */}
+      {/* 1. FORCE OVERRIDE: This CSS attacks the map component and forces it to fill the parent */}
       <style dangerouslySetInnerHTML={{__html: `
-        .mapboxgl-map, .mapboxgl-canvas-container, .mapboxgl-canvas {
+        /* Target the immediate child div of the map container */
+        #map-force-container > div {
           height: 100% !important;
           width: 100% !important;
           position: absolute !important;
-          inset: 0 !important;
+        }
+        /* Target mapbox internals */
+        .mapboxgl-map, .mapboxgl-canvas-container, .mapboxgl-canvas {
+          height: 100% !important;
+          width: 100% !important;
         }
       `}} />
 
-      {/* 2. HEADER: Professional Title & Branding */}
-      <div className="flex-none z-10 px-6 py-4 border-b border-white/10 bg-black flex justify-between items-center h-20">
+      {/* 2. HEADER: Fixed Height (h-16 = 4rem) */}
+      <div className="h-16 flex-none z-10 px-6 border-b border-white/10 bg-black flex justify-between items-center">
         
-        {/* Left: The Titles */}
-        <div className="flex flex-col">
-          <div className="flex items-center gap-3 mb-1">
-            <span className="text-emerald-500 font-bold tracking-widest text-xs uppercase">
+        {/* Title Section */}
+        <div className="flex flex-col justify-center">
+          <div className="flex items-center gap-2 mb-0.5">
+            <span className="text-emerald-500 font-bold tracking-widest text-[10px] uppercase">
               RIYADH
             </span>
-            <span className="h-px w-8 bg-white/20"></span>
-            <span className="text-gray-500 text-[10px] uppercase tracking-widest font-medium">
+            <span className="h-px w-6 bg-white/20"></span>
+            <span className="text-gray-500 text-[9px] uppercase tracking-widest font-medium">
               BY AHMED MEZIL
             </span>
           </div>
-          <h1 className="text-white text-xl md:text-2xl font-bold tracking-tight">
+          <h1 className="text-white text-lg font-bold tracking-tight leading-none">
             15-Minute Delivery Zones
           </h1>
         </div>
         
-        {/* Right: Back Button */}
+        {/* Back Button */}
         <Link 
           href="/" 
-          className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-emerald-500/10 border border-white/10 hover:border-emerald-500/50 rounded-lg text-sm text-gray-300 hover:text-emerald-400 transition-all group"
+          className="flex items-center gap-2 px-3 py-1.5 bg-white/5 hover:bg-emerald-500/10 border border-white/10 hover:border-emerald-500/50 rounded-lg text-xs text-gray-300 hover:text-emerald-400 transition-all group"
         >
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
-          <span className="hidden md:inline">Back to Platform</span>
-          <span className="md:hidden">Back</span>
+          <span>Back</span>
         </Link>
       </div>
 
-      {/* 3. MAP AREA: Fills all remaining space */}
-      <div className="flex-1 relative w-full bg-gray-900">
+      {/* 3. MAP CONTAINER: Calculated Height (Screen - Header) */}
+      <div id="map-force-container" className="relative w-full bg-gray-900" style={{ height: 'calc(100vh - 4rem)' }}>
         <RiyadhIsochrone />
       </div>
       
