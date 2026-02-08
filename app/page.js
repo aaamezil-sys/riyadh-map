@@ -1,97 +1,100 @@
+'use client';
+
 import Link from 'next/link';
 
-export default function Home() {
+export default function RiyadhPlatform() {
   return (
-    <main className="min-h-screen bg-[#030303] text-white selection:bg-emerald-500/30">
+    <main className="min-h-screen bg-black text-white p-8 md:p-16 relative overflow-hidden">
       
-      {/* Abstract Background Glow */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-emerald-900/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px]" />
+      {/* --- NEW: Floating Back Button --- */}
+      <div className="absolute top-6 right-6 md:top-10 md:right-16 z-50">
+        <a 
+          href="https://ahmedmezil.com" 
+          className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-xs md:text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all group"
+        >
+          <span className="group-hover:-translate-x-1 transition-transform">←</span>
+          Back to Portfolio
+        </a>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        
-        {/* Header */}
-        <header className="mb-24 text-center md:text-left">
-          <div className="inline-block mb-4 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
-            <span className="text-xs font-medium tracking-widest text-emerald-400 uppercase">Ahmed Mezil Portfolio</span>
+      {/* Background Glow Effect */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.05)_0%,transparent_50%)] pointer-events-none"></div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header Section */}
+        <header className="mb-20">
+          <div className="inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] uppercase tracking-widest font-bold mb-6">
+            Ahmed Mezil Portfolio
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight">
             Riyadh Intelligence <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-600">
-              Platform
-            </span>
+            <span className="text-emerald-500">Platform</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
-            A suite of advanced spatial intelligence engines designed to support 
-            logistics, infrastructure, and investment decisions for Vision 2030.
+            A suite of advanced spatial intelligence engines designed to support logistics, infrastructure, and investment decisions for Vision 2030.
           </p>
         </header>
 
-        {/* The Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* Card 1: 15-Min Delivery (Active) */}
-          <Link href="/15-min-delivery" className="group relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl opacity-75 group-hover:opacity-100 transition duration-500 blur opacity-20"></div>
-            <div className="relative h-full bg-[#0a0a0a] border border-white/10 rounded-2xl p-8 transition-all duration-300 group-hover:translate-y-[-4px]">
-              <div className="flex justify-between items-start mb-8">
-                <div className="p-3 bg-emerald-500/10 rounded-xl border border-emerald-500/20">
-                  <span className="text-2xl">⚡️</span>
+          {/* 15-Minute Logistics - LIVE */}
+          <div className="group relative bg-zinc-900/50 border border-white/5 rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-500 shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="relative z-10">
+              <div className="flex justify-between items-start mb-12">
+                <div className="w-12 h-12 bg-zinc-800 rounded-xl flex items-center justify-center text-xl shadow-inner border border-white/5">
+                  ⚡
                 </div>
-                <span className="px-2 py-1 rounded text-[10px] font-bold tracking-wider text-emerald-400 bg-emerald-900/20 border border-emerald-500/20">LIVE SYSTEM</span>
+                <span className="text-[10px] font-bold text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded uppercase tracking-tighter border border-emerald-500/20">
+                  Live System
+                </span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-emerald-400 transition-colors">15-Minute Logistics</h3>
+              <h3 className="text-2xl font-bold mb-4">15-Minute Logistics</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-8">
                 Real-time isochrone mapping to determine precise 15-minute delivery zones using traffic data.
               </p>
-              <div className="flex items-center text-emerald-500 text-sm font-semibold">
-                Launch Engine <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </div>
-          </Link>
-
-          {/* Card 2: Metro (Coming Soon) */}
-          <div className="relative group cursor-not-allowed opacity-60 hover:opacity-100 transition-opacity">
-            <div className="h-full bg-[#0a0a0a] border border-white/5 rounded-2xl p-8">
-              <div className="flex justify-between items-start mb-8">
-                <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                  <span className="text-2xl">🚇</span>
-                </div>
-                <span className="px-2 py-1 rounded text-[10px] font-bold tracking-wider text-gray-500 border border-white/10">IN DEVELOPMENT</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-300">Metro Network</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Catchment analysis for all 6 lines and 84 stations to identify high-value transit-oriented real estate.
-              </p>
+              <Link href="/15-min-delivery" className="inline-flex items-center text-emerald-400 text-sm font-bold hover:gap-2 transition-all group-hover:text-emerald-300">
+                Launch Engine <span className="ml-1">→</span>
+              </Link>
             </div>
           </div>
 
-          {/* Card 3: Zoning (Coming Soon) */}
-          <div className="relative group cursor-not-allowed opacity-60 hover:opacity-100 transition-opacity">
-            <div className="h-full bg-[#0a0a0a] border border-white/5 rounded-2xl p-8">
-              <div className="flex justify-between items-start mb-8">
-                <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                  <span className="text-2xl">🏗️</span>
-                </div>
-                <span className="px-2 py-1 rounded text-[10px] font-bold tracking-wider text-gray-500 border border-white/10">Q2 2026</span>
+          {/* Riyadh Metro - IN DEV */}
+          <div className="relative bg-zinc-900/30 border border-white/5 rounded-3xl p-8 opacity-60">
+            <div className="flex justify-between items-start mb-12">
+              <div className="w-12 h-12 bg-zinc-800 rounded-xl flex items-center justify-center text-xl grayscale">
+                🚇
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-300">Zoning & Land Use</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Commercial vs. Residential density heatmaps to identify under-served investment zones.
-              </p>
+              <span className="text-[10px] font-bold text-gray-500 bg-white/5 px-2 py-1 rounded uppercase tracking-tighter">
+                In Development
+              </span>
             </div>
+            <h3 className="text-2xl font-bold mb-4 text-gray-300">Metro Network</h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-8">
+              Catchment analysis for all 6 lines and 84 stations to identify high-value transit-oriented real estate.
+            </p>
+            <span className="text-xs font-bold text-gray-600 uppercase tracking-widest">Q2 2026</span>
+          </div>
+
+          {/* Zoning - IN DEV */}
+          <div className="relative bg-zinc-900/30 border border-white/5 rounded-3xl p-8 opacity-60">
+            <div className="flex justify-between items-start mb-12">
+              <div className="w-12 h-12 bg-zinc-800 rounded-xl flex items-center justify-center text-xl grayscale">
+                🏗️
+              </div>
+              <span className="text-[10px] font-bold text-gray-500 bg-white/5 px-2 py-1 rounded uppercase tracking-tighter">
+                Q2 2026
+              </span>
+            </div>
+            <h3 className="text-2xl font-bold mb-4 text-gray-300">Zoning & Land Use</h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-8">
+              Commercial vs. Residential density heatmaps to identify under-served investment zones.
+            </p>
+            <span className="text-xs font-bold text-gray-600 uppercase tracking-widest">In Development</span>
           </div>
 
         </div>
-
-        {/* Footer */}
-        <footer className="mt-32 border-t border-white/10 pt-8 flex justify-between text-sm text-gray-600">
-          <p>© 2026 Ahmed Mezil. All rights reserved.</p>
-          <p>Riyadh • Toronto</p>
-        </footer>
-        
       </div>
     </main>
   );
