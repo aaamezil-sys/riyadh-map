@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 
-// This loads your map component (RiyadhIsochrone.js)
 const RiyadhIsochrone = dynamic(() => import('../../components/RiyadhIsochrone'), { 
   ssr: false,
   loading: () => (
