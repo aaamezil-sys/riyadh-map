@@ -2,18 +2,15 @@
 
 import dynamic from 'next/dynamic';
 
+// This loads the map component from your components folder
 const RiyadhIsochrone = dynamic(() => import('../../components/RiyadhIsochrone'), { 
   ssr: false,
-  loading: () => (
-    <div className="flex items-center justify-center h-screen bg-[#0a0a0a] text-emerald-500">
-      Loading Logistics Engine...
-    </div>
-  )
+  loading: () => <p>Loading Logistics Engine...</p>
 });
 
 export default function MapPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
       <RiyadhIsochrone />
     </main>
   );
