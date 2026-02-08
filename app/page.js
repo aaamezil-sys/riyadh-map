@@ -13,7 +13,7 @@ export default function RiyadhPlatform() {
           className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-xs md:text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all group"
         >
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
-          Back to Portfolio
+          Back to my website
         </a>
       </div>
 
