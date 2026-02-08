@@ -15,5 +15,10 @@
     "react": "latest",
     "react-dom": "latest",
     "react-map-gl": "^7.1.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
   }
 }
