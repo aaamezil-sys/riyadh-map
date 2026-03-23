@@ -6,7 +6,7 @@ export default function RiyadhPlatform() {
   return (
     <main className="min-h-screen bg-black text-white p-8 md:p-16 relative overflow-hidden">
       
-      {/* --- NEW: Floating Back Button --- */}
+      {/* --- Floating Back Button --- */}
       <div className="absolute top-6 right-6 md:top-10 md:right-16 z-50">
         <a 
           href="https://ahmedmezil.com" 
@@ -17,11 +17,11 @@ export default function RiyadhPlatform() {
         </a>
       </div>
 
-      {/* Background Glow Effect */}
+      {/* Background Glow */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.05)_0%,transparent_50%)] pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header Section */}
+        {/* Header */}
         <header className="mb-20">
           <div className="inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] uppercase tracking-widest font-bold mb-6">
             Ahmed Mezil Portfolio
@@ -36,8 +36,30 @@ export default function RiyadhPlatform() {
         </header>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          {/* Vision 2030 Intel Map - LIVE - FIRST */}
+          <div className="group relative bg-zinc-900/50 border border-white/5 rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-500 shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="relative z-10">
+              <div className="flex justify-between items-start mb-12">
+                <div className="w-12 h-12 bg-zinc-800 rounded-xl flex items-center justify-center text-xl shadow-inner border border-white/5">
+                  🗺️
+                </div>
+                <span className="text-[10px] font-bold text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded uppercase tracking-tighter border border-emerald-500/20">
+                  Live System
+                </span>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Vision 2030 Intel Map</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-8">
+                Interactive spatial intelligence across 30 Vision 2030 megaprojects — sports, real estate, energy, hospitality, and transport.
+              </p>
+              <Link href="/riyadh-intel-map" className="inline-flex items-center text-emerald-400 text-sm font-bold hover:gap-2 transition-all group-hover:text-emerald-300">
+                Launch Engine <span className="ml-1">→</span>
+              </Link>
+            </div>
+          </div>
+
           {/* 15-Minute Logistics - LIVE */}
           <div className="group relative bg-zinc-900/50 border border-white/5 rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-500 shadow-2xl overflow-hidden">
             <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -60,7 +82,7 @@ export default function RiyadhPlatform() {
             </div>
           </div>
 
-          {/* Riyadh Metro - IN DEV */}
+          {/* Metro Network - IN DEV */}
           <div className="relative bg-zinc-900/30 border border-white/5 rounded-3xl p-8 opacity-60">
             <div className="flex justify-between items-start mb-12">
               <div className="w-12 h-12 bg-zinc-800 rounded-xl flex items-center justify-center text-xl grayscale">
