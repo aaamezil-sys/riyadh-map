@@ -19,7 +19,7 @@ export default function RiyadhIsochrone() {
   const [marker, setMarker] = useState(null);
 
   // 🔴 RE-PASTE YOUR MAPBOX TOKEN HERE 🔴
-  const MAPBOX_TOKEN = 'pk.eyJ1IjoiYWFhbWV6aWwiLCJhIjoiY2xxNzFvZmp4MTBnbzJpdWs5YzFla2NmOCJ9.j3lxSfWk0WOkr9VoUsw2ig'; 
+  const MAPBOX_TOKEN = 'pk.eyJ1IjoiYWFhbWV6aWwiLCJhIjoiY21uM25tbGczMWlhbzJwcHpocWxqY3g3NCJ9.C8O9Kilsq6FoKn144Sibng'; 
 
   const getIsochrone = async (lng, lat) => {
     setLoading(true);
